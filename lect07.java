@@ -37,6 +37,30 @@ class bankaccount{
         System.out.println("total balance after deposit = "+balance);
     }
 }
+class laptop{
+    Scanner sc=new Scanner(System.in);
+    String brand;
+    int RAM,price;
+    laptop()
+    {
+        System.out.println("enter brand of laptop:- ");
+        String brand=sc.nextLine();
+        System.out.println("enter ram of laptop:- ");
+        int RAM=sc.nextInt();
+        System.out.println("enter price of laptop:- ");
+        int price=sc.nextInt();
+        this.brand=brand;
+        this.RAM=RAM;
+        this.price=price;
+
+    }
+    void disp()
+    {
+        System.out.println("brand:- "+brand);
+        System.out.println("RAM:- "+RAM);
+        System.out.println("price:- "+price);
+    }
+}
 public class lect07 {
     public static void main(String[] agrs){
 
@@ -66,5 +90,11 @@ public class lect07 {
         b1.deposit();
         b2.deposit();
         b3.deposit();
+
+        laptop l1=new laptop();
+        laptop l2=new laptop();
+
+        l1.disp();
+        l2.disp();
     }
 }
