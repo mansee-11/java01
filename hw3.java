@@ -19,7 +19,7 @@ class rectangle{
     {
         System.out.println("parameter of rectangle is "+(2*(length+bredth)));
     }
-}*/
+}
 class circle{
     double  radius;
     void area()
@@ -29,6 +29,37 @@ class circle{
     void circumference()
     {
         System.out.println("circumference of circle is "+(3.14)*2*radius);
+    }
+}
+
+class book{
+
+    String title,author;
+    int price;
+    void discount()
+    {
+        price-=(price/10);
+        System.out.println("price after discount:- "+price);
+    }
+    void disp()
+    {
+        System.out.println("title:- "+title);
+        System.out.println("author:- "+author);
+        System.out.println("price:- "+price);
+    }
+}*/
+
+class movie{
+    String name;
+    int rating,relyear;
+    void disp()
+    {
+        if(relyear>2020)
+        {
+            System.out.println("name:- "+name);
+            System.out.println("rating:- "+rating);
+            System.out.println("release year:- "+relyear);
+        }
     }
 }
 public class hw3 {
@@ -70,7 +101,7 @@ public class hw3 {
 
         r2.area();
         r2.perameter();
-        */
+
         //circle class
         circle c1=new circle();
         circle c2=new circle();
@@ -83,5 +114,53 @@ public class hw3 {
 
         c2.area();
         c2.circumference();
+
+        //book class
+        book b1=new book();
+        book b2=new book();
+
+        b1.title="Forever You";
+        b1.author="mansee";
+        b1.price=1123;
+
+        b2.title= "Letting Go";
+        b2.author="mars";
+        b2.price=257;
+
+        b1.disp();
+        b2.disp();
+
+        b1.discount();
+        */
+        //movie class
+        movie m1=new movie();
+        movie m2=new movie();
+        movie m3=new movie();
+        movie m4=new movie();
+        movie m5=new movie();
+
+        m1.name="xyz";
+        m2.name="abc";
+        m3.name="qrs";
+        m4.name="efg";
+        m5.name="lmn";
+
+        m1.rating=4;
+        m2.rating=2;
+        m3.rating=5;
+        m4.rating=2;
+        m5.rating=5;
+
+        m1.relyear=2007;
+        m2.relyear=2006;
+        m3.relyear=2021;
+        m4.relyear=2011;
+        m5.relyear=2023;
+
+        m1.disp();
+        m2.disp();
+        m3.disp();
+        m4.disp();
+        m5.disp();
     }
 }
