@@ -1,4 +1,4 @@
-//to save 3student data using  class
+import java.util.Scanner;
 
 /*class student {
     String name;
@@ -13,7 +13,7 @@ class rectangle{
     int length,bredth;
     void area()
     {
-        System.out.println("area of the rectangle is "+(length*bredth));
+        System.out.println("area of the recta9l,ngle is "+(length*bredth));
     }
     void perameter()
     {
@@ -47,7 +47,7 @@ class book{
         System.out.println("author:- "+author);
         System.out.println("price:- "+price);
     }
-}*/
+}
 
 class movie{
     String name;
@@ -60,6 +60,25 @@ class movie{
             System.out.println("rating:- "+rating);
             System.out.println("release year:- "+relyear);
         }
+    }
+}*/
+class calculator{
+    int a,b;
+    void sum()
+    {
+        System.out.println("sum is:- "+(a+b));
+    }
+    void sub()
+    {
+        System.out.println("sub is:- "+(a-b));
+    }
+    void multi()
+    {
+        System.out.println("multiply is:- "+(a*b));
+    }
+    void divide()
+    {
+        System.out.println("divide is:- "+(a/b));
     }
 }
 public class hw3 {
@@ -131,7 +150,7 @@ public class hw3 {
         b2.disp();
 
         b1.discount();
-        */
+
         //movie class
         movie m1=new movie();
         movie m2=new movie();
@@ -162,5 +181,36 @@ public class hw3 {
         m3.disp();
         m4.disp();
         m5.disp();
+        */
+        //calculator class
+        Scanner sc=new Scanner(System.in);
+
+        calculator c1=new calculator();
+
+        c1.a=sc.nextInt();
+        c1.b=sc.nextInt();
+        System.out.println("1-sum\n2-sub\n3-multiply\n4-divide\n");
+        System.out.print("enter your choice:-");
+        int i=sc.nextInt();
+        if(i==1)
+        {
+            c1.sum();
+        }
+        else if (i==2)
+        {
+            c1.sub();
+        }
+        else if (i==3)
+        {
+            c1.multi();
+        }
+        else if(i==4)
+        {
+            c1.divide();
+        }
+        else
+        {
+            System.out.println("wrong input");
+        }
     }
 }
