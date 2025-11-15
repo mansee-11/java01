@@ -55,6 +55,39 @@ class BOOKS{
         System.out.println("author of book = "+author);
     }
 }
+class disp{
+    void array(int a[])
+    {
+        System.out.println("elements of array are:-");
+        for(int i:a)
+        {
+            System.out.println(i);
+        }
+
+    }
+    void array(String a[])
+    {
+        System.out.println("elements of array are:-");
+        for(String i:a)
+        {
+            System.out.println(i);
+        }
+
+    }
+    void array(int a[][])
+    {
+        System.out.println("elements of array are:-");
+        for(int i[]:a)
+        {
+            for(int j:i)
+            {
+                System.out.println(j);
+            }
+
+        }
+
+    }
+}
 public class hw5 {
     public static void main(String[] args){
         /*
@@ -73,9 +106,17 @@ public class hw5 {
         a.area(2,3);    //for rectangle
         a.area(4,4);    //for square
         a.area(1.1,2.3);//for triangle
-        */
+
         BOOKS b=new BOOKS();
         b.details("forever you ","mansee",1123);
         b.details("forever you","mansee");
+        */
+        int []x={1,2,3,4,5};
+        String []y={"mansee","manya","mars"};
+        int[][]z={{1,2,3},{4,5,6},{7,8,9}};
+        disp d=new disp();
+        d.array(x);
+        d.array(y);
+        d.array(z);
     }
 }
