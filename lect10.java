@@ -18,7 +18,7 @@ abstract class shape{
     abstract void area();
 }
 class circle extends shape{
-    void area(){
+    void area() {
         System.out.println("3.14*r*r");
     }
 }
@@ -62,7 +62,7 @@ public class lect10 {
         shape s1=new circle();
         s1.area();
 
-        shape s2=new circle();
+        shape s2=new rectangle();
         s2.area();
     }
 }
