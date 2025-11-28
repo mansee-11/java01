@@ -63,7 +63,7 @@ public class lect15 {
             maparr2.put(i,maparr2.getOrDefault(i,0)+1);
         }
         for(char i:maparr2.keySet()) {
-            if (maparr.containsKey(i) && maparr.get(i) == maparr2.get(i)) {
+            if (maparr.containsKey(i) && maparr.get(i) .equals(maparr2.get(i))) {
                 continue;
             } else {
                 System.out.println("No");
