@@ -154,7 +154,7 @@ public class notesapp {
             case 6:
             {
                 System.out.println("enter name of exixting file:-");
-                String name= sc.nextLine();
+                String name= sc.next();
                 name+=".txt";
                 ReadData(name);
                 break;
