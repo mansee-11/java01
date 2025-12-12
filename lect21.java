@@ -3,9 +3,9 @@ class Bank {
     int balance = 100;
 
     synchronized void widthraw(int amt) {
-        System.out.println(Thread.currentThread().getName() + " checking balance");
+        System.out.println(Thread.currentThread().getName() + " is checking balance");
         if (balance >= amt) {
-            System.out.println(Thread.currentThread().getName()+" widrawing balance");
+            System.out.println(Thread.currentThread().getName()+" is widrawing balance");
             balance = balance - amt;
             System.out.println("Balance left: " + balance);
         } else {
