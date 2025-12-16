@@ -18,7 +18,7 @@ public class lect23 {
     }
     public static void main(String[] args)
     {
-        int arr[]={2,2,3,2,5};
+        int []arr={2,2,3,2,5};
         System.out.println(majority(arr));
     }
 }
