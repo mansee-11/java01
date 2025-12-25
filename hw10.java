@@ -1,30 +1,69 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class hw10 {
-    public static boolean canjump(int [] nums)
-    {
-
-        int reach=0;
-        for(int i=0;i<nums.length;i++)
+    public static int[] intersect(int[] nums1, int[] nums2) {
+        int i=0,j=0;
+        ArrayList<Integer> list =new ArrayList<>();
+        while(i<nums1.length && j<nums2.length)
         {
-            if (i > reach)
+            if( nums1[i]<nums2[j])
             {
-                return false;
+                ++i;
             }
 
-            if(reach < (i+nums[i]) )
+            else if(nums1[i]>nums2[j])
             {
-                reach=i+nums[i];
+                ++j;
             }
-
-            if (reach >= (nums.length-1) )
+            else
             {
-                return true;
+                list.add(nums1[i]);
+                j++;
+                i++;
             }
         }
-        return true;
+        int x=list.size();
+        int []result=new int[x];
+        for(int k=0;k<x;k++)
+        {
+            result[k]=list.get(k);
+        }
+        return result;
     }
     public static void main(String[] args)
     {
-        int []arr={2,2,3,2,5};
-        System.out.println(canjump(arr));
+        Scanner sc=new Scanner(System.in);
+
+
+        System.out.println("enter no of element in first array = ");
+        int n=sc.nextInt();
+
+        int []arr=new int[n];
+
+        for(int i=0;i<n;i++)
+        {
+            int a=sc.nextInt();
+            arr[i]=a;
+        }
+
+        System.out.println("enter no of element in second array = ");
+        int m=sc.nextInt();
+
+        int []arr2=new int[m];
+
+        for(int i=0;i<m;i++)
+        {
+            int a=sc.nextInt();
+            arr2[i]=a;
+        }
+
+        int[] intersect = intersect(arr, arr2);
+
+        System.out.println("intersection of arrays[including duplicate elements]:-\n");
+        for(int i:intersect)
+        {
+            System.out.println(i+" ");
+        }
     }
 }
