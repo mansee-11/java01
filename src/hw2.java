@@ -1,4 +1,3 @@
-import javax.lang.model.type.NullType;
 import java.util.Scanner;
 
 public class hw2 {

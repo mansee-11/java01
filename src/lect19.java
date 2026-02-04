@@ -1,7 +1,3 @@
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.ListIterator;
-
 public class lect19
 {
     static void VoteAge(int age)

@@ -1,6 +1,4 @@
 import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Scanner;
 public class lect17 {
     public static void main(String[] args){
