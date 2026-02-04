@@ -8,20 +8,3 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-# IntelliJ IDEA
-.idea/
-*.iml
-*.ipr
-*.iws
-
-# Java build/output
-out/
-target/
-*.class
-
-# Logs
-*.log
-
-# OS files
-.DS_Store
-Thumbs.db
