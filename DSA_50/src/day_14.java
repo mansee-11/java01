@@ -27,6 +27,7 @@ public class day_14 {
             if(sum==target)
             {
                 System.out.println("subarray with given sum is ("+0+","+(i-1)+")");
+                return;
             }
             for(int k=i,l=0;k<n;k++,l++)
             {
@@ -35,6 +36,7 @@ public class day_14 {
                 if(sum==target)
                 {
                     System.out.println("subarray with given sum is ("+(l+1)+","+k+")");
+                    return;
                 }
             }
         }
