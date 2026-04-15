@@ -9,7 +9,7 @@ public class lect28 {
         f.setSize(500, 400);
         f.setVisible(true);
         f.setFont(font);
-        f.setBackground(Color.GRAY);
+        f.setBackground(new Color(204,222,250));
         f.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
 
@@ -46,35 +46,35 @@ public class lect28 {
         Button add = new Button("ADD");
         add.setBounds(100,175,100,40);//used to give position and width & height
         add.setVisible(true);// button visible on window
-        add.setBackground(Color.BLACK);
+        add.setBackground(new Color(2,24,46));
         add.setForeground(Color.WHITE);
         f.add(add);
 
         Button sub = new Button("SUBTRACT");
         sub.setBounds(300,175,100,40);//used to give position and width & height
         sub.setVisible(true);// button visible on window
-        sub.setBackground(Color.BLACK);
+        sub.setBackground(new Color(2,24,46));
         sub.setForeground(Color.WHITE);
         f.add(sub);
 
         Button multi = new Button("MULTIPLY");
         multi.setBounds(100,225,100,40);//used to give position and width & height
         multi.setVisible(true);// button visible on window
-        multi.setBackground(Color.BLACK);
+        multi.setBackground(new Color(2,24,46));
         multi.setForeground(Color.WHITE);
         f.add(multi);
 
         Button divide = new Button("DIVISION");
         divide.setBounds(300,225,100,40);//used to give position and width & height
         divide.setVisible(true);// button visible on window
-        divide.setBackground(Color.BLACK);
+        divide.setBackground(new Color(2,24,46));
         divide.setForeground(Color.WHITE);
         f.add(divide);
 
         Label l = new Label();
         l.setBounds(50, 300, 400, 50);
         l.setFont(font);
-        l.setBackground(Color.yellow);
+        l.setBackground(new Color(133,196,228));
         l.setForeground(Color.BLACK);
         f.add(l);
 
@@ -99,6 +99,25 @@ public class lect28 {
             }
         });
 
+        add.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                add.setBackground(new Color(110,148,207));
+            }
+            public void mouseExited(MouseEvent e) {
+                add.setBackground(new Color(2,24,46));
+            }
+
+            public void mousePressed(MouseEvent e) {
+                add.setBackground(new Color(72,141,180));
+            }
+
+            public void mouseReleased(MouseEvent e) {
+                add.setBackground(new Color(110,148,207));
+
+            }
+        });
+
         sub.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 l.setVisible(true);
@@ -120,6 +139,25 @@ public class lect28 {
             }
         });
 
+        sub.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                sub.setBackground(new Color(110,148,207));
+            }
+            public void mouseExited(MouseEvent e) {
+                sub.setBackground(new Color(2,24,46));
+            }
+
+            public void mousePressed(MouseEvent e) {
+                sub.setBackground(new Color(72,141,180));
+            }
+
+            public void mouseReleased(MouseEvent e) {
+                sub.setBackground(new Color(110,148,207));
+
+            }
+        });
+
         multi.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 l.setVisible(true);
@@ -138,6 +176,25 @@ public class lect28 {
                 }
                 int result=num1*num2;
                 l.setText("Multiplication : "+result);
+            }
+        });
+
+        multi.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                multi.setBackground(new Color(110,148,207));
+            }
+            public void mouseExited(MouseEvent e) {
+                multi.setBackground(new Color(2,24,46));
+            }
+
+            public void mousePressed(MouseEvent e) {
+                multi.setBackground(new Color(72,141,180));
+            }
+
+            public void mouseReleased(MouseEvent e) {
+                multi.setBackground(new Color(110,148,207));
+
             }
         });
 
@@ -167,6 +224,25 @@ public class lect28 {
                     int result=num1/num2;
                     l.setText("Division : "+result);
                 }
+
+            }
+        });
+
+        divide.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                divide.setBackground(new Color(110,148,207));
+            }
+            public void mouseExited(MouseEvent e) {
+                divide.setBackground(new Color(2,24,46));
+            }
+
+            public void mousePressed(MouseEvent e) {
+                divide.setBackground(new Color(72,141,180));
+            }
+
+            public void mouseReleased(MouseEvent e) {
+                divide.setBackground(new Color(110,148,207));
 
             }
         });
