@@ -86,13 +86,13 @@ public class notesapp {
             System.out.println(e);
         }
     }
-    public static void main(String[] agrs){
+    public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
 
         System.out.println("1:-create new note");
         System.out.println("2:-create new note and add data in it");
-        System.out.println("3:-add data in exixting note");
-        System.out.println("4-overwrite in exixting note");
+        System.out.println("3:-add data in existing note");
+        System.out.println("4-overwrite in existing note");
         System.out.println("5-delete note");
         System.out.println("6:-read data in file");
         System.out.println("enter your choice from 1-6:-");
@@ -133,7 +133,7 @@ public class notesapp {
             }
             case 4:
             {
-                System.out.println("enter name of exesting file:-");
+                System.out.println("enter name of existing file:-");
                 String name= sc.next();
                 name+=".txt";
                 sc.nextLine();
@@ -144,7 +144,7 @@ public class notesapp {
             }
             case 5:
             {
-                System.out.println("enter name of exixting file:-");
+                System.out.println("enter name of existing file:-");
                 String name= sc.next();
                 name+=".txt";
                 sc.nextLine();
@@ -153,7 +153,7 @@ public class notesapp {
             }
             case 6:
             {
-                System.out.println("enter name of exixting file:-");
+                System.out.println("enter name of existing file:-");
                 String name= sc.next();
                 name+=".txt";
                 ReadData(name);
