@@ -75,8 +75,13 @@ class Linklist{
         System.out.println("mid term is "+slow.data);
     }
     void checkloop(){
-        Node slow=head,fast=head;
-        while(slow.next!=null)
+        if(head==null)
+        {
+            System.out.println("loop not detected");
+            return;
+        }
+        Node slow=head,fast=head.next;
+        while(slow.next!=null && fast!=null)
         {
             if(slow.data==fast.data){
                 System.out.println("loop detected");
@@ -90,6 +95,67 @@ class Linklist{
             else fast=fast.next;
         }
         System.out.println("no loop dtected");
+    }
+    boolean loop(){
+        if(head==null)
+        {
+            return false;
+        }
+        Node slow=head,fast=head;
+        while(fast.next!=null && fast.next.next!=null)
+        {
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow.data==fast.data)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    void nth_last(int n){
+        Node first=head,second=head;
+        for(int i=0;i<n;i++)
+        {
+            if(first==null)
+            {
+                System.out.println("list empty");
+            }
+            first=first.next;
+        }
+        while(first!=null)
+        {
+            first=first.next;
+            second=second.next;
+        }
+        System.out.println("nth from last is "+second.data);
+    }
+
+    void merge_two(Node h1,Node h2)
+    {
+        while(h1!=null && h2!=null)
+        {
+            if(h1.data<h2.data)
+            {
+                System.out.print(h1.data+" ");
+                h1=h1.next;
+            }
+            else
+            {
+                System.out.print(h2.data+" ");
+                h2=h2.next;
+            }
+        }
+        while(h1!=null)
+        {
+            System.out.print(h1.data+" ");
+            h1=h1.next;
+        }
+        while(h2!=null)
+        {
+            System.out.print(h2.data+" ");
+            h2=h2.next;
+        }
     }
 }
 
