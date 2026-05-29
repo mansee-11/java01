@@ -53,7 +53,7 @@ class Linklist{
         if(temp==null) System.out.println("not found");
         else System.out.println("Found yehhhhh!!!!!!");
     }
-    void rev()
+    Node  rev(Node head)
     {
         Node temp=head,prev=null,next=null;
         while(temp!=null){
@@ -63,6 +63,7 @@ class Linklist{
             temp=next;
         }
         head=prev;
+        return head;
     }
 
     void midterm(){
@@ -156,6 +157,99 @@ class Linklist{
             System.out.print(h2.data+" ");
             h2=h2.next;
         }
+    }
+    Node rev_add(Node h1,Node h2){
+        Node dummy=new Node(0);
+        Node temp=dummy;
+        int carry=0;
+        Node temp1=h1,temp2=h2;
+        while(temp1!=null && temp2!=null || carry!=0)
+        {
+            int sum=carry;
+            if(temp1!=null)
+            {
+                sum+=temp1.data;
+                temp1=temp1.next;
+            }
+            if(temp2!=null)
+            {
+                sum+=temp2.data;
+                temp2=temp2.next;
+            }
+            carry=sum/10;
+            Node newnode=new Node(sum%10);
+            temp.next=newnode;
+            temp=temp.next;
+        }
+        return dummy;
+    }
+    void del_specific(Node temp)
+    {
+        if(temp == null || temp.next == null) return;
+        temp.data=temp.next.data;
+        temp.next=temp.next.next;
+    }
+    void group_diffrent()
+    {
+        Node temp=head;
+        Node zero=new Node(-1);
+        Node one=new Node(-1);
+        Node two=new Node(-1);
+
+        Node t1=zero,t2=one,t3=two;
+
+        while(temp!=null){
+            if(temp.data==0)
+            {
+                t1.next=temp;
+                t1=t1.next;
+            }
+            else if(temp.data==1)
+            {
+                t2.next=temp;
+                t2=t2.next;
+            }
+            else
+            {
+                t3.next=temp;
+                t3=t3.next;
+            }
+            temp=temp.next;
+        }
+        t1.next=one.next;
+        t2.next=two.next;
+        head=zero.next;
+    }
+    void even_odd(){
+        Node even=new Node(-1);
+        Node odd=new Node(-1);
+        Node e=even,o=odd;
+        Node temp=head;
+        while(temp!=null)
+        {
+            if(temp.data%2==0)
+            {
+                e.next=temp;
+                e=e.next;
+            }
+            else
+            {
+                o.next=temp;
+                o=o.next;
+            }
+            temp=temp.next;
+        }
+        o.next=even.next;
+        head=odd.next;
+    }
+    long getnum(Node head){
+        long num=0;
+        while (head != null)
+        {
+            num=num*10+head.data;
+            head=head.next;
+        }
+        return num;
     }
 }
 
