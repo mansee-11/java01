@@ -251,6 +251,81 @@ class Linklist{
         }
         return num;
     }
+
+    Node rev_range(Node head,int x,int y)
+    {
+//        Node temp=head;
+//        while(temp.data!=x)
+//        {
+//            temp=temp.next;
+//        }
+//        Node p=temp;
+//        Node ttemp=head;
+//        while(ttemp.data!=y)
+//        {
+//            ttemp=ttemp.next;
+//        }
+//        Node prev=ttemp.next,next=null;
+//        while( temp!=null || temp!=ttemp.next){
+//            next=temp.next;
+//            temp.next=prev;
+//            prev=temp;
+//            temp=next;
+//        }
+//        p.next=prev;
+
+        Node dummy = new Node(0);
+        dummy.next=head;
+        Node prev=dummy;
+
+        for(int i=1;i<x;i++)
+        {
+            prev=prev.next;
+        }
+        Node current =prev.next;
+        for(int i=0;i<y-x;i++)
+        {
+            Node next=current.next;
+            current.next= next.next;
+            next.next=prev.next;
+            prev.next=next;
+        }
+        return dummy.next;
+    }
+    void change_l_f()
+    {
+        Node temp=head;
+        while(temp.next.next!=null)
+        {
+            temp=temp.next;
+        }
+        temp.next.next=head;
+        head=temp.next;
+        temp.next=null;
+    }
+    void rev_pair(){
+        Node temp=head,current =head;
+        Node dummy=new Node(0);
+        Node prev=dummy;
+        int n=0;
+        while(temp.next!=null && temp.next.next.next!=null)
+        {
+            current=temp.next;
+            if(n%2==0)
+            {
+                temp.next=temp.next.next.next;
+            }
+            else{
+                temp.next=prev;
+            }
+            prev=temp;
+            temp=current;
+//            temp.next=temp.next.next;
+//            temp.next.next=temp;
+//            temp=current.next.next;
+        }
+        head=dummy.next;
+    }
 }
 
 public class lect10{
