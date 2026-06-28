@@ -1,0 +1,35 @@
+//Count islands(DFS on matrix)
+
+public class day_47 {
+    public static void dfs(char[][] mat, int i, int j){
+        if(i<0 ||i>=mat.length||j<0||j>=mat[0].length ||mat[i][j]=='0')
+        {
+            return;
+        }
+        mat[i][j]='0';
+        dfs(mat,i+1,j);
+        dfs(mat,i-1,j);
+        dfs(mat,i,j+1);
+        dfs(mat,i,j-1);
+    }
+    public static void main(String[] args){
+        char[][] mat={{'1','1','0','0','0'},
+                {'1','1','0','0','0'},
+                {'0','0','1','0','0'},
+                {'0','0','0','1','1'}};
+
+        int count=0;
+        for(int i=0;i<mat.length;i++)
+        {
+            for(int j=0;j<mat[0].length;j++)
+            {
+                if(mat[i][j]=='1')
+                {
+                    count++;
+                    dfs(mat,i,j);
+                }
+            }
+        }
+        System.out.println("no. of island = "+count);
+    }
+}
