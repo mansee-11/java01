@@ -22,7 +22,7 @@ public class day_48 {
             high=Math.max(high,mat[i][mat[0].length-1]);
         }
 
-        int req=(mat.length * mat[0].length +1;)/2;
+        int req=(mat.length * mat[0].length +1)/2;
         while(low<high){
             int mid=low+(high-low)/2;
             int c=0;
