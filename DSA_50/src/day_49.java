@@ -11,17 +11,38 @@ public class day_49 {
         int m=mat.length,n=mat[0].length;
         int top=0,bottom=m-1,left=0,right=n-1;
 
-        while(!(top>=bottom) && !(left>=right))
+        while(top<=bottom && left<=right)
         {
             int i;
-            for(i=left;i<=right;i++) System.out.print(mat[top][i] +" ");
-            for(i=top+1;i<=bottom;i++) System.out.print(mat[i][right]+" ");
-            for(i=right-1;i>=left;i--) System.out.print(mat[bottom][i]+" ");
-            for(i=bottom-1;i>top;i--) System.out.print(mat[i][left]+" ");
+
+            for(i=left;i<=right;i++)
+            {
+                System.out.print(mat[top][i] +" ");
+            }
             top+=1;
-            bottom-=1;
-            left+=1;
+
+            for(i=top;i<=bottom;i++)
+            {
+                System.out.print(mat[i][right]+" ");
+            }
             right-=1;
+
+            if(top<=bottom)
+            {
+                for(i=right;i>=left;i--)
+                {
+                    System.out.print(mat[bottom][i]+" ");
+                }
+                bottom-=1;
+            }
+            if(left<=right)
+            {
+                for(i=bottom;i>=top;i--)
+                {
+                    System.out.print(mat[i][left]+" ");
+                }
+                left+=1;
+            }
         }
     }
 }
